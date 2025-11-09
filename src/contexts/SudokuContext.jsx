@@ -3,8 +3,8 @@ import { createContext, useEffect, useReducer } from "react";
 const SudokuContext = createContext();
 
 const initialState = {
-  entries: [],
-  solution: [],
+  entries: Array(81).fill(0),
+  solution: Array(81).fill(0),
   difficulty: "",
   isLoading: false,
   wrongNumIndex: -1,
@@ -74,11 +74,11 @@ function SudokuProvider({ children }) {
     fetchPuzzle();
   };
   useEffect(getPuzzle, []);
-  //   useEffect(() => {
-  //     console.log(entries);
-  //     console.log(solution);
-  //     console.log(difficulty);
-  //   }, [entries, solution, difficulty]);
+  useEffect(() => {
+    console.log(entries);
+    console.log(solution);
+    console.log(difficulty);
+  }, [entries, solution, difficulty]);
 
   return (
     <SudokuContext.Provider value={{ entries, solution, difficulty, wrongNumIndex, dispatch }}>
