@@ -74,11 +74,11 @@ function SudokuProvider({ children }) {
     fetchPuzzle();
   };
   useEffect(getPuzzle, []);
-  useEffect(() => {
-    console.log(entries);
-    console.log(solution);
-    console.log(difficulty);
-  }, [entries, solution, difficulty]);
+  // useEffect(() => {
+  //   console.log(entries);
+  //   console.log(solution);
+  //   console.log(difficulty);
+  // }, [entries, solution, difficulty]);
 
   return (
     <SudokuContext.Provider value={{ entries, solution, difficulty, wrongNumIndex, dispatch }}>
